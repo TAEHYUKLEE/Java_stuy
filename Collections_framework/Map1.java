@@ -1,6 +1,9 @@
 package Collections_framework;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 public class Map1 {
 	//Map은 key와 value로 되어있다. 
@@ -17,6 +20,41 @@ public class Map1 {
 		System.out.println(a.get("two"));
 		System.out.println(a.get("three"));
 		//key로 value에 접근하기때문에 key가 중복되면 안되는 것이었다.
+		
+		System.out.println("HashMap format" + a);
+		//hasformat은 순서가 없기때문에 indexing이 불가능하다.
+		//{} <- Python의 dictionary와 같네. Key=value로 되어 있다. 다만 Python은 key:value로 되어있다.
+			
+		iteratorUsingForEach(a);
+		iteratorUsingIterator(a);
 
+	}
+
+	static void iteratorUsingIterator(HashMap<String, Integer> map) {
+		Set<Map.Entry<String, Integer>> entries = map.entrySet();
+		//Map아래 Entry라는 interface또는 class가 있다고 생각하면 편할 것 같다. 
+		//map에서.entrySet()을 이용하면 Set으로 변한다 []로 되어있다. 그리고 변환된 것을
+		//Set<datatype> entries <- map.entrySet();로 넣어준다.
+		
+		
+		//Python에서는 for k, v in spiral_inx.items():로 dictionary안의 값을 뽑아옴.
+		System.out.println("Set format" + entries);
+		for (Map.Entry<String, Integer> entry : entries) {
+			//entries안에 있는 요소들을 하나 하나 향상된 for문으로 출력해준다.
+			//for문으로 어떻게 빼는거지?
+			System.out.println(entry.getKey() + ":" + entry.getValue());
+		}
+		
+	}
+
+	static void iteratorUsingForEach(HashMap<String, Integer> map) {
+		Set<Map.Entry<String, Integer>> entries = map.entrySet();
+		
+		Iterator<Map.Entry<String, Integer>> i = entries.iterator();
+		
+		while(i.hasNext()) {
+			Map.Entry<String, Integer> entry = i.next();
+			System.out.println(entry.getKey()+ ":" + entry.getValue());
+		}
 	}
 }
