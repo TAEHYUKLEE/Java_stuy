@@ -10,13 +10,13 @@ class EmployeeInfo1{
 	}
 }
 
-class Person<T,S>{
+class Person1<T,S>{
 	//필드 변수
 	public T info;
 	public S id;
 	
 	//생성자
-	Person(T info, S id){
+	Person1(T info, S id){
 		this.info = info;
 	}
 	
@@ -41,7 +41,7 @@ public class Generic3 {
 		//만들수 있는 객체들을 제공한다. 이런 Class들을 wrapper class라 한다. 
 		EmployeeInfo e = new EmployeeInfo(1);
 		Integer id = new Integer(1);
-		Person<EmployeeInfo, Integer> p1 = new Person<EmployeeInfo, Integer>(e, id);
+		Person1<EmployeeInfo, Integer> p1 = new Person1<EmployeeInfo, Integer>(e, id);
 		//int -> Integer, double -> Double 등 
 		//그리고 생성자에 들어가는 인자들도 객체화 시켜줘야 한다.
 		//위와 같이 id인스턴스를 만들어서 보내주게 된다.
@@ -51,7 +51,7 @@ public class Generic3 {
 		
 		//제네릭 4강 추가 
 		//생략 가능
-		Person p2 = new Person(e, id);
+		Person1 p2 = new Person1(e, id);
 		//참조가 이미 EmployeeInfo datatype, Integer datatype이므로 자바가 알아서 유추가 가능하다 (생략 가능)
 		
 		p1.printInfo(e);

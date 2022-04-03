@@ -17,7 +17,7 @@ public class List_Set_Difference {
 		A.add(3);
 		
 		//HasSet은 위에서 2를 4번 추가했지만, 1번밖에 안나왔다. 
-		Iterator hi = (Iterator) A.iterator();
+		Iterator hi = A.iterator();
 		while(hi.hasNext()) {
 			System.out.println(hi.next());
 		}
@@ -32,7 +32,7 @@ public class List_Set_Difference {
 		B.add(2);
 		B.add(3);
 		//ArrayList는 위에서 2를 4번 추가한 것이 모두 반영되었다. 
-		Iterator hi2 = (Iterator) B.iterator();
+		Iterator hi2 = B.iterator();
 		while(hi2.hasNext()) {
 			System.out.println(hi2.next());
 		}			
