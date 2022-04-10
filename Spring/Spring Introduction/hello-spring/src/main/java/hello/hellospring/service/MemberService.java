@@ -26,6 +26,8 @@ public class MemberService {
     /*회원 가입*/
     public Long join(Member member){
 
+        //long start = System.currentTimeMillis();
+
         /*
         //비즈니스 로직중 같은 이름이 있는 회원은 중복 가입이 안된다를 넣어볼 것이다.
         //같은 이름이 있는 중복 회원 X
@@ -43,10 +45,15 @@ public class MemberService {
                 e.printStackTrace();
             }
          위에처럼 코드를 짤수도 있지만 Optional을 감싸는 거은 그닥 좋은 것은 아니라네 그래서 아래와 같이 짠다고 함*/
-
-        validateDuplicateMember(member);//중복 회원 검증
-        memberRepository.save(member);
-        return member.getId();
+        try{
+            validateDuplicateMember(member);//중복 회원 검증
+            memberRepository.save(member);
+            return member.getId();}
+        finally{
+            //long finish = System.currentTimeMillis();
+            //long timeMs = finish - start;
+            //System.out.println("join=" + timeMs + "ms");
+        }
 
     }
 
