@@ -1,8 +1,11 @@
 package timeObject;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.time.temporal.ChronoField;
@@ -86,6 +89,11 @@ public class time {
 		//ChronoUnit.YEARS, ChronoUnit.MONTHS, ChronoUnit.WEEKS, ChronoUnit.DAYS,
 		//ChronoUnit.HOURS, ChronoUnit.SECONDS, ChronoUnit.MILLIS, ChronoUnit.NANOS
 
+		
+		//시간차를 고려한 ZonedDateTime으로의 변환
+
+		LocalDateTime localDateTime = LocalDateTime.now();
+		ZonedDateTime zd2 = localDateTime.atZone(ZoneId.systemDefault());
 
 	}
 	
