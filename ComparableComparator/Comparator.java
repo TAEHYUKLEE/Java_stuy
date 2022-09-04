@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 import java.math.*;
 
-public class Comparator {
+public class ComparatorUsage {
 
 	public static void main(String[] args) {
 		
