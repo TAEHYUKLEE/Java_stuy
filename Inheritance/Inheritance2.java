@@ -1,6 +1,3 @@
-package Inheritance;
-
-
 class Division extends SubstractionableCalculator{
 	
 	public void division() {

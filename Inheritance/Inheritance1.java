@@ -1,4 +1,3 @@
-package Inheritance;
 
 class Calculator{ //설계도
 	int left, right; //Attribute

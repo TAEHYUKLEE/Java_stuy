@@ -1,8 +1,6 @@
-package Inheritance;
-
-
 class Cal{ //설계도
 	int _left, _right; //Field
+	int result;
 	
 	public Cal() {} //기본 생성자
 	//상속할때 기본 생성자를 부르기로 약속되어 있어서 parameter생성자가 있다면 만들어줘야한다.
